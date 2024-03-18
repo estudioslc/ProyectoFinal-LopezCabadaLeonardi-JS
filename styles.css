@@ -1,0 +1,52 @@
+/* styles.css */
+
+/* Estilos generales para las tarjetas */
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las imágenes dentro de las tarjetas */
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los títulos de las guitarras */
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los detalles de las guitarras */
+.card p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Estilos para el botón "Agregar" */
+.add-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón "Agregar" al pasar el mouse por encima */
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+
+

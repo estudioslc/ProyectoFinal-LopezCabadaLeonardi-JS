@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LC Guitars</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <h1>Bienvenido a LC Guitars</h1>
+    <div class="card">
+        <img src="./img/fenderStrat.jpg" alt="Fender Stratocaster">
+        <h3>Fender Stratocaster</h3>
+        <p>Marca: Fender</p>
+        <p>Modelo: Stratocaster</p>
+        <p>Color: Sunburst</p>
+        <p>Precio: $1000</p>
+        <button class="add-button" onclick="agregarAlCarrito('Fender', 1000)">Agregar</button>
+    </div>
+    
+    <div class="card">
+        <img src="./img/GibsonLes.webp" alt="Gibson Les Paul">
+        <h3>Gibson Les Paul</h3>
+        <p>Marca: Gibson</p>
+        <p>Modelo: Les Paul</p>
+        <p>Color: Cherry Burst</p>
+        <p>Precio: $1500</p>
+        <button class="add-button" onclick="agregarAlCarrito('Gibson', 1500)">Agregar</button>
+    </div>
+    <div class="card">
+        <img src="./img/GisbonSG.webp" alt="Epiphone SG Standard">
+        <h3>Epiphone SG Standard</h3>
+        <p><strong>Marca:</strong> Epiphone</p>
+        <p><strong>Modelo:</strong> SG Standard</p>
+        <p><strong>Color:</strong> Ébano</p>
+        <p><strong>Precio:</strong> $599</p>
+        <button class="add-button" onclick="agregarAlCarrito('Epiphone', 599)">Agregar</button>
+    </div>
+    <div class="card">
+        <img src="./img/ibanez-rg550.webp" alt="Ibanez RG550">
+        <h3>Ibanez RG550</h3>
+        <p><strong>Marca:</strong> Ibanez</p>
+        <p><strong>Modelo:</strong> RG550</p>
+        <p><strong>Color:</strong> Negro</p>
+        <p><strong>Precio:</strong> $799</p>
+        <button class="add-button" onclick="agregarAlCarrito('Ibanez', 799)">Agregar</button>
+    </div>
+    <div class="card">
+        <img src="./img/PRS.webp" alt="PRS Custom 24">
+        <h3>PRS Custom 24</h3>
+        <p><strong>Marca:</strong> PRS</p>
+        <p><strong>Modelo:</strong> Custom 24</p>
+        <p><strong>Color:</strong> Azul</p>
+        <p><strong>Precio:</strong> $1999</p>
+        <button class="add-button" onclick="agregarAlCarrito('PRS', 1999)">Agregar</button>
+    </div>
+    <div class="card">
+        <img src="./img/Yamaha.webp" alt="Yamaha Pacifica 112V">
+        <h3>Yamaha Pacifica 112V</h3>
+        <p><strong>Marca:</strong> Yamaha</p>
+        <p><strong>Modelo:</strong> Pacifica 112V</p>
+        <p><strong>Color:</strong> Natural</p>
+        <p><strong>Precio:</strong> $299</p>
+        <button class="add-button" onclick="agregarAlCarrito('Yamaha', 299)">Agregar</button>
+    </div>
+    
+    
+
+    <table id="carrito">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán las filas con la marca y el precio de las guitarras seleccionadas -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total:</td>
+                <td id="totalPrecio">$0</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+</body>
+</html>
+
+
+
+
