@@ -7,9 +7,34 @@
     <title>LC Guitars</title>
     <link rel="stylesheet" href="styles.css">
     <script src="./js/main.js"></script>
+    <!-- Agregar el CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">LC Guitars</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <!-- Agrega más elementos de navegación según tu proyecto -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+<main>
     <h1>Bienvenido a LC Guitars</h1>
+    
     <div class="card">
         <img src="./img/fenderStrat.jpg" alt="Fender Stratocaster">
         <h3>Fender Stratocaster</h3>
@@ -17,7 +42,8 @@
         <p>Modelo: Stratocaster</p>
         <p>Color: Sunburst</p>
         <p>Precio: $1000</p>
-        <button class="add-button" onclick="agregarAlCarrito('Fender', 1000)">Agregar</button>
+        <button class="add-button" onclick="agregarAlCarrito('Fender', 1000, this)">Agregar</button>
+        <button class="eliminar-button" onclick="eliminarDelCarrito(0)">Eliminar</button>
     </div>
     
     <div class="card">
@@ -27,7 +53,8 @@
         <p>Modelo: Les Paul</p>
         <p>Color: Cherry Burst</p>
         <p>Precio: $1500</p>
-        <button class="add-button" onclick="agregarAlCarrito('Gibson', 1500)">Agregar</button>
+        <button class="add-button" onclick="agregarAlCarrito('Gibson', 1500, this)">Agregar</button>
+        <button class="eliminar-button" onclick="eliminarDelCarrito(0)">Eliminar</button>
     </div>
     <div class="card">
         <img src="./img/GisbonSG.webp" alt="Epiphone SG Standard">
@@ -36,7 +63,8 @@
         <p><strong>Modelo:</strong> SG Standard</p>
         <p><strong>Color:</strong> Ébano</p>
         <p><strong>Precio:</strong> $599</p>
-        <button class="add-button" onclick="agregarAlCarrito('Epiphone', 599)">Agregar</button>
+        <button class="add-button" onclick="agregarAlCarrito('Epiphone', 599, this)">Agregar</button>
+        <button class="eliminar-button" onclick="eliminarDelCarrito(0)">Eliminar</button>
     </div>
     <div class="card">
         <img src="./img/ibanez-rg550.webp" alt="Ibanez RG550">
@@ -45,7 +73,8 @@
         <p><strong>Modelo:</strong> RG550</p>
         <p><strong>Color:</strong> Negro</p>
         <p><strong>Precio:</strong> $799</p>
-        <button class="add-button" onclick="agregarAlCarrito('Ibanez', 799)">Agregar</button>
+        <button class="add-button" onclick="agregarAlCarrito('Ibanez', 799, this)">Agregar</button>
+        <button class="eliminar-button" onclick="eliminarDelCarrito(0)">Eliminar</button>
     </div>
     <div class="card">
         <img src="./img/PRS.webp" alt="PRS Custom 24">
@@ -54,7 +83,8 @@
         <p><strong>Modelo:</strong> Custom 24</p>
         <p><strong>Color:</strong> Azul</p>
         <p><strong>Precio:</strong> $1999</p>
-        <button class="add-button" onclick="agregarAlCarrito('PRS', 1999)">Agregar</button>
+        <button class="add-button" onclick="agregarAlCarrito('PRS', 1999, this)">Agregar</button>
+        <button class="eliminar-button" onclick="eliminarDelCarrito(0)">Eliminar</button>
     </div>
     <div class="card">
         <img src="./img/Yamaha.webp" alt="Yamaha Pacifica 112V">
@@ -63,9 +93,9 @@
         <p><strong>Modelo:</strong> Pacifica 112V</p>
         <p><strong>Color:</strong> Natural</p>
         <p><strong>Precio:</strong> $299</p>
-        <button class="add-button" onclick="agregarAlCarrito('Yamaha', 299)">Agregar</button>
+        <button class="add-button" onclick="agregarAlCarrito('Yamaha', 299, this)">Agregar</button>
+        <button class="eliminar-button" onclick="eliminarDelCarrito(0)">Eliminar</button>
     </div>
-    
     
 
     <table id="carrito">
@@ -85,6 +115,13 @@
             </tr>
         </tfoot>
     </table>
+    
+    <!-- Botón para comprar -->
+    <button id="comprar-button" onclick="realizarCompra()">Comprar</button>
+
+    <div id="mensajeEmergente" class="mensaje-oculto">¡Guitarra agregada al carrito!</div>
+
+</main>
     
 </body>
 </html>
