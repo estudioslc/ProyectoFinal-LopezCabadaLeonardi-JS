@@ -1,14 +1,14 @@
 const carrito = []; // Array para almacenar las guitarras seleccionadas
 
 function agregarAlCarrito(marca, precio, boton) {
-    // Busca si la guitarra ya está en el carrito
+    // Buscar si la guitarra ya está en el carrito
     const guitarraExistente = carrito.find(guitarra => guitarra.marca === marca);
 
     if (guitarraExistente) {
         // Si ya existe, incrementa la cantidad
         guitarraExistente.cantidad++;
     } else {
-        // Si no existe, agrégala al carrito con cantidad 1
+        // Si no existe, se agrega al carrito con cantidad 1
         carrito.push({ marca, precio, cantidad: 1 });
     }
 
@@ -59,7 +59,7 @@ function actualizarTablaCarrito() {
         celdaPrecio.innerText = `$${guitarra.precio * guitarra.cantidad}`;
         total += guitarra.precio * guitarra.cantidad;
 
-        // Agrega el botón "Eliminar" para esta guitarra
+        // Agrego el botón "Eliminar" para esta guitarra
         const botonEliminar = document.createElement("button");
         botonEliminar.innerText = "Eliminar";
         botonEliminar.addEventListener("click", () => eliminarDelCarrito(index));
@@ -69,13 +69,13 @@ function actualizarTablaCarrito() {
     document.getElementById("totalPrecio").innerText = `$${total}`;
 }
 
-// Resto de tu lógica y funciones (si las tienes)...
+
 
 window.addEventListener("load", () => {
     const marcaGuardada = localStorage.getItem("guitarraMarca");
     const precioGuardado = localStorage.getItem("guitarraPrecio");
     if (marcaGuardada && precioGuardado) {
-        // Hacer algo con los datos recuperados (por ejemplo, mostrarlos en la página)
+        // Aquí hago algo con los datos recuperados (por ejemplo, mostrarlos en la página)
         console.log(`Guitarra guardada: ${marcaGuardada} - Precio: $${precioGuardado}`);
     }
 });
@@ -106,10 +106,9 @@ console.log(`Color: ${datosGuitarraParseados.color}`);
 console.log(`Precio: ${datosGuitarraParseados.precio}`);
 
 function realizarCompra() {
-    // Aquí puedes agregar la lógica para procesar la compra
-    // Por ejemplo, enviar los datos al servidor o mostrar un mensaje de confirmación
+
     console.log("¡Compra realizada! Gracias por elegir LC Guitars.");
-    // También puedes limpiar el carrito si lo deseas
+    // limpiar el carrito
     carrito.length = 0;
     actualizarTablaCarrito();
 }
